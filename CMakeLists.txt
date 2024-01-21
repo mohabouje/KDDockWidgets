@@ -91,7 +91,7 @@ set(KDDockWidgets_FRONTENDS
     CACHE STRING "Semicolon separated list of frontends to enable (blank for autodetect)"
 )
 
-option(KDDockWidgets_QT6 "Build against Qt 6" OFF)
+option(KDDockWidgets_QT6 "Build against Qt 6" ON)
 option(KDDockWidgets_DEVELOPER_MODE "Developer Mode" OFF)
 option(KDDockWidgets_PYTHON_BINDINGS "Build python bindings" OFF)
 option(KDDockWidgets_STATIC "Build statically" OFF)
@@ -253,12 +253,12 @@ endif()
 
 set(KDDockWidgets_LIBRARY_QTID "")
 
-if(KDDW_FRONTEND_QT)
-    include(KDQtInstallPaths) # to set QT_INSTALL_FOO variables
-    if(KDDockWidgets_QT6)
-        set(KDDockWidgets_LIBRARY_QTID "-qt6")
-    endif()
-endif()
+# if(KDDW_FRONTEND_QT)
+#     include(KDQtInstallPaths) # to set QT_INSTALL_FOO variables
+#     if(KDDockWidgets_QT6)
+#        set(KDDockWidgets_LIBRARY_QTID "-qt6")
+#     endif()
+# endif()
 
 add_definitions(-DQT_NO_KEYWORDS)
 
