@@ -329,11 +329,12 @@ add_library(KDAB::kddockwidgets ALIAS kddockwidgets)
 set_target_properties(kddockwidgets PROPERTIES OUTPUT_NAME "kddockwidgets${KDDockWidgets_LIBRARY_QTID}")
 set_compiler_flags(kddockwidgets)
 
-if(KDDockWidgets_QT6)
-    set(DOCKS_INCLUDES_INSTALL_PATH "include/kddockwidgets-qt6")
-else()
-    set(DOCKS_INCLUDES_INSTALL_PATH "include/")
-endif()
+set(DOCKS_INCLUDES_INSTALL_PATH "include/")
+# if(KDDockWidgets_QT6)
+#     set(DOCKS_INCLUDES_INSTALL_PATH "include/kddockwidgets-qt6")
+# else()
+#     set(DOCKS_INCLUDES_INSTALL_PATH "include/")
+# endif()
 
 include(kdbindings.cmake)
 
